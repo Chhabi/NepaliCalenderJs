@@ -28,19 +28,23 @@
         var dateToShow = new Date();
         cal.render(dateToShow);
 
-        $(document).on('click',".btn-prev",function() {
+        $("#calender").on('click',".btn-prev",function() {
             dateToShow.setMonth(dateToShow.getMonth()-1);
             console.log(dateToShow);
             cal.render(dateToShow);
         });
 
-        $(document).on('click',".btn-next",function() {
+        $("#calender").on('click',".btn-next",function() {
             dateToShow.setMonth(dateToShow.getMonth()+1);
             cal.render(dateToShow);
         });
-        $(document).on('click',".btn-today",function() {
+        $("#calender").on('click',".btn-today",function() {
             dateToShow = new Date();
             cal.render(dateToShow);
+        });
+
+        $("#calender").on('click','.weekday', function(){
+           alert($(this).attr("data-date"));
         });
 
 

@@ -25,11 +25,11 @@ NepaliCalender.prototype.render = function (dateInput) {
 
     dateInput = dateInput || new Date();
     var weekDayStartsAt = 0;
-    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    //var months = ["बैशाख", "ज्येष्ठ", "आषाढ", "श्रावण", "भाद्र", "आश्विन", "कार्तिक", "मंसिर", "पौष", "माघ", "फाल्गुन", "चैत्र"]
-    //var days = ["आईतवार", "सोमबार", "मंगलवार", "बुद्धबार", "बिहीवार", "शुक्रबार ", "शनिबार "];
-    var months = ["Baisakh", "Jestha", "Ashad", "Shrawan", "Bhadra", "Asoj", "Kartik", "Mangshir", "Poush", "Magh", "Falgun", "Chaitra"]
     var mapService = new NepaliDateMap();
+
+    var days = mapService.getDayNames();
+    var months = mapService.getMonthNames();
+
     var converter = new NepaliDateConverter("y-m-d", mapService);
     var today = converter.convert(dateInput); //jan 1 2012
     var thisMonth = mapService.getMap(today.np.y)[today.np.m - 1];
@@ -68,7 +68,7 @@ NepaliCalender.prototype.render = function (dateInput) {
             if (today.np.d == dateNumber) {
                 className += " today";
             }
-            rowString += "<td class=\"" + className + "\">" + dateNumber + "</td>";
+            rowString += "<td class=\"" + className + "\" data-date=\""+today.np.y+"-"+today.np.m+"-"+dateNumber+"\">" + dateNumber + "</td>";
             dateNumber++;
         }
         if (i % 7 == 0) {

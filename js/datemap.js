@@ -92,9 +92,20 @@ var NepaliDateMap = function () {
         this.bs[2088] = [30, 31, 32, 32, 30, 31, 30, 30, 29, 30, 30, 30],
         this.bs[2089] = [30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 30, 30],
         this.bs[2090] = [30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 30, 30];
+    this.days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    //var months = ["बैशाख", "ज्येष्ठ", "आषाढ", "श्रावण", "भाद्र", "आश्विन", "कार्तिक", "मंसिर", "पौष", "माघ", "फाल्गुन", "चैत्र"]
+    //var days = ["आईतवार", "सोमबार", "मंगलवार", "बुद्धबार", "बिहीवार", "शुक्रबार ", "शनिबार "];
+    this.months = ["Baisakh", "Jestha", "Ashad", "Shrawan", "Bhadra", "Asoj", "Kartik", "Mangshir", "Poush", "Magh", "Falgun", "Chaitra"]
+
     return {
         getMap: function (i) {
             return self.bs[i];
+        },
+        getMonthNames: function() {
+            return self.months;
+        },
+        getDayNames: function() {
+            return self.days;
         }
     };
 };

@@ -1,0 +1,19 @@
+{
+  "name": "Nepali Calender",
+  "version": "1.0",
+  "description": "Nepali Calender Widget",
+  "main": "index.html",
+  "authors": [
+    "Sujan Dhakal"
+  ],
+  "license": "MIT",
+  "homepage": "http://sujandhakal.com.np/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

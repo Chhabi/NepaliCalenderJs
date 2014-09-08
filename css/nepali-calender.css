@@ -1,35 +1,33 @@
 .swidget-calander td {
-    padding:10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  cursor: hand;
+}
+.swidget-calander td:hover {
+  background-color: #5bc0de !important;
+  color: white;
+}
+.swidget-calander td.weekend {
+  background-color: #d43f3a;
+  color: white;
+}
+.swidget-calander td.weekday {
+  font-size: 1.4em;
+  /* background-color: #f0f0f0; */
+}
+.swidget-calander td.today {
+  background-color: #4cae4c;
+  color: white;
 }
 .swidget-calander th {
-    padding:10px;
-    font-size:1em;
-    text-align: center;
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+}
+.swidget-calander th .swidget-heading h3 {
+  text-align: center;
 }
 .swidget-calander .swidget-heading {
-    font-size:1.4em;
-}
-
-.swidget-calander td.weekday {
-    font-size:1.4em;
-    background-color: #f0f0f0;
-}
-
-th.swidget-heading h3 {
-    text-align: center;
-}
-
-.swidget-calander td.weekend {
-    background-color: #d43f3a;
-    color: white;
-}
-
-.swidget-calander td.today {
-    background-color: #4cae4c;
-    color: white;
-}
-
-.swidget-calander table tr:hover {
-    background-color: #fcf8e3;
+  font-size: 1.4em;
 }
