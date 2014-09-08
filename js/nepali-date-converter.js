@@ -13,9 +13,9 @@ var NepaliDateConverter = function (format, mapService) {
             dateObj = self.parseDate(dateObj, self.format);
         }
         else if (typeof dateObj == 'object' && date.getDate()) {
-            dateObj = {y: date.getFullYear(), m: date.getMonth()+1, d: date.getDate()};
+            dateObj = {y: date.getFullYear(), m: date.getMonth() + 1, d: date.getDate()};
         }
-        return {np: self.adToBikramSambat(dateObj), en: new Date(dateObj.y, dateObj.m, dateObj.d)};
+        return {np: self.adToBikramSambat(dateObj), en: new Date(dateObj.y, dateObj.m-1, dateObj.d)};
     };
 
     this.countAdDays = function (dateStart, dateEnd) {

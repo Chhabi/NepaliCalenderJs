@@ -13,8 +13,7 @@
 <script>
     (function(){
         var cal = new NepaliCalender("calender");
-
-        cal.render();
+        cal.render(new Date(2014,2,15));
     })();
 </script>
 </html>

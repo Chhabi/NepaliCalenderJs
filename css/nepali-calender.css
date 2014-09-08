@@ -7,6 +7,11 @@
     border: 1px solid black;
 }
 
+.swidget-calander td.weekday {
+    font-size:30px;
+    background-color: #f0f0f0;
+}
+
 .swidget-calander td.weekend {
     background-color: red;
     color: white;
