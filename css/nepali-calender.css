@@ -1,9 +1,11 @@
 .swidget-calander td {
     padding:10px;
+    text-align: center;
 }
 .swidget-calander th {
     padding:10px;
     font-size:1em;
+    text-align: center;
 }
 .swidget-calander .swidget-heading {
     font-size:1.4em;
@@ -26,4 +28,8 @@ th.swidget-heading h3 {
 .swidget-calander td.today {
     background-color: #4cae4c;
     color: white;
+}
+
+.swidget-calander table tr:hover {
+    background-color: #fcf8e3;
 }
