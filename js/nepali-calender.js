@@ -4,7 +4,7 @@ var NepaliCalender = function (id) {
 
 NepaliCalender.prototype.getFirstWeekDayOfMonth = function (today, weekday) {
     var diff = (today % 7);
-    var index = weekday+1;
+    var index = weekday + 1;
     while (diff != 0) {
         index--;
         diff--;
@@ -14,7 +14,7 @@ NepaliCalender.prototype.getFirstWeekDayOfMonth = function (today, weekday) {
         index = Math.abs(7 + index);
     }
     if (index >= 7) {
-        index = Math.abs(6-index);
+        index = Math.abs(6 - index);
     }
 
     return index;
@@ -26,18 +26,20 @@ NepaliCalender.prototype.render = function (dateInput) {
     dateInput = dateInput || new Date();
     var weekDayStartsAt = 0;
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var months = ["Baisakh", "jestha", "Ashad", "Shrawan", "Bhadra", "Asoj", "Kartik", "Mangshir", "Poush", "Magh", "Falgun", "Chaitra"]
+    //var months = ["बैशाख", "ज्येष्ठ", "आषाढ", "श्रावण", "भाद्र", "आश्विन", "कार्तिक", "मंसिर", "पौष", "माघ", "फाल्गुन", "चैत्र"]
+    //var days = ["आईतवार", "सोमबार", "मंगलवार", "बुद्धबार", "बिहीवार", "शुक्रबार ", "शनिबार "];
+    var months = ["Baisakh", "Jestha", "Ashad", "Shrawan", "Bhadra", "Asoj", "Kartik", "Mangshir", "Poush", "Magh", "Falgun", "Chaitra"]
     var mapService = new NepaliDateMap();
     var converter = new NepaliDateConverter("y-m-d", mapService);
     var today = converter.convert(dateInput); //jan 1 2012
-    console.log(today);
     var thisMonth = mapService.getMap(today.np.y)[today.np.m - 1];
     var firstDayOfTheMonthStartsAt = this.getFirstWeekDayOfMonth(today.np.d, today.en.getDay());
     var container = document.getElementById(this.containerId);
-    var calanderString = "<table class=\"swidget-calander\"><tr><th colspan=\"7\">" + months[today.np.m - 1] + ", " + today.np.y + "</tr>";
+    var btnGroup = "<div class=\"btn-group pull-right\"><button type=\"button\" class=\"btn btn-default btn-prev\">&larr;</button><button type=\"button\" class=\"btn btn-default btn-today\">Today</button><button type=\"button\" class=\"btn btn-default btn-next\">&rarr;</button></div>";
+    var calanderString = "<table class=\"swidget-calander table\"><tr><th class=\"swidget-heading\" colspan=\"7\"><h3>" + months[today.np.m - 1] + ", " + today.np.y +btnGroup+ "</h3></tr>";
 
 
-    calanderString += "<tr>";
+    calanderString += "<tr class=\"weekdays\">";
     days.forEach(function (value, index) {
         calanderString += "<th>" + value + "</th>";
     });
@@ -51,9 +53,9 @@ NepaliCalender.prototype.render = function (dateInput) {
     for (var i = 1; dateNumber <= thisMonth; i++) {
         if (firstDayOfTheMonthStartsAt > 0) {
             push = firstDayOfTheMonthStartsAt;
-            i += push-1;
+            i += push - 1;
             if (push > 0) {
-                rowString += "<td colspan=\"" + (push) + "\">&nbsp;</td>";
+                rowString += "<td colspan=\"" + push + "\">&nbsp;</td>";
             }
             firstDayOfTheMonthStartsAt = -1;
         } else {
@@ -61,6 +63,10 @@ NepaliCalender.prototype.render = function (dateInput) {
                 className = "weekday weekend";
             } else {
                 className = "weekday";
+            }
+
+            if (today.np.d == dateNumber) {
+                className += " today";
             }
             rowString += "<td class=\"" + className + "\">" + dateNumber + "</td>";
             dateNumber++;

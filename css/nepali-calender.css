@@ -1,18 +1,29 @@
-.swidget-calander {
-    text-align: center;
-    width: 100%;
-    height: 500px;
+.swidget-calander td {
+    padding:10px;
 }
-.swidget-calander,.swidget-calander th {
-    border: 1px solid black;
+.swidget-calander th {
+    padding:10px;
+    font-size:1em;
+}
+.swidget-calander .swidget-heading {
+    font-size:1.4em;
 }
 
 .swidget-calander td.weekday {
-    font-size:30px;
+    font-size:1.4em;
     background-color: #f0f0f0;
 }
 
+th.swidget-heading h3 {
+    text-align: center;
+}
+
 .swidget-calander td.weekend {
-    background-color: red;
+    background-color: #d43f3a;
+    color: white;
+}
+
+.swidget-calander td.today {
+    background-color: #4cae4c;
     color: white;
 }
