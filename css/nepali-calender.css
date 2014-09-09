@@ -1,3 +1,6 @@
+.swidget-calander {
+  border: 1px solid #ddd;
+}
 .swidget-calander td {
   padding: 10px;
   text-align: center;
@@ -25,8 +28,10 @@
   font-size: 1em;
   text-align: center;
 }
-.swidget-calander th .swidget-heading h3 {
+.swidget-calander th.swidget-heading h3 {
   text-align: center;
+  display: inline-block;
+  margin-top: 0px;
 }
 .swidget-calander .swidget-heading {
   font-size: 1.4em;

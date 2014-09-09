@@ -2,13 +2,16 @@
     <thead>
     <tr>
         <th class="swidget-heading" colspan="7">
-            <h3>{{calender.month}} , {{ calender.year }}
-                <div class="btn-group pull-right">
-                    <button type="button" class="btn btn-default btn-prev" ng-click="calender.prevMonth()">&larr;</button>
-                    <button type="button" class="btn btn-default btn-today" ng-click="calender.today()">Today</button>
-                    <button type="button" class="btn btn-default btn-next" ng-click="calender.nextMonth()">&rarr;</button>
-                </div>
-            </h3>
+            <h3>{{calender.month}} , {{ calender.year }}</h3>
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default" ng-click="calender.prevMonth()">&larr; Prev Month</button>
+                <button type="button" class="btn btn-default" ng-click="calender.today()">Today</button>
+                <button type="button" class="btn btn-default" ng-click="calender.nextMonth()">&rarr; Next Month</button>
+            </div>
+            <div class="btn-group pull-left">
+                <button type="button" class="btn btn-default" ng-click="calender.prevYear()">&larr; Previous Year</button>
+                <button type="button" class="btn btn-default" ng-click="calender.nextYear()">&rarr; Next Year</button>
+            </div>
         </th>
     </tr>
     </thead>

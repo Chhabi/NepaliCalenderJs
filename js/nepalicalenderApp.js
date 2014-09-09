@@ -23,6 +23,12 @@ nepaliCalenderApp.directive("nepaliCalender", function(){
             this.nextMonth = function() {
                 $scope.dateInput.setMonth($scope.dateInput.getMonth()+1);
             };
+            this.prevYear = function() {
+                $scope.dateInput.setFullYear($scope.dateInput.getFullYear()-1);
+            };
+            this.nextYear = function() {
+                $scope.dateInput.setFullYear($scope.dateInput.getFullYear()+1);
+            };
             this.today = function() {
                 $scope.dateInput = new Date();
             };
