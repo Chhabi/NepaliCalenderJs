@@ -21,23 +21,15 @@ NepaliCalender.prototype.getFirstWeekDayOfMonth = function (today, weekday) {
 };
 
 
-NepaliCalender.prototype.render = function (dateInput) {
+NepaliCalender.prototype.render = function (today,mapService) {
 
-    dateInput = dateInput || new Date();
     var weekDayStartsAt = 0;
-    var mapService = new NepaliDateMap();
-
     var days = mapService.getDayNames();
     var months = mapService.getMonthNames();
-
-    var converter = new NepaliDateConverter("y-m-d", mapService);
-    var today = converter.convert(dateInput); //jan 1 2012
     var thisMonth = mapService.getMap(today.np.y)[today.np.m - 1];
     var firstDayOfTheMonthStartsAt = this.getFirstWeekDayOfMonth(today.np.d, today.en.getDay());
     var container = document.getElementById(this.containerId);
-    var btnGroup = "<div class=\"btn-group pull-right\"><button type=\"button\" class=\"btn btn-default btn-prev\">&larr;</button><button type=\"button\" class=\"btn btn-default btn-today\">Today</button><button type=\"button\" class=\"btn btn-default btn-next\">&rarr;</button></div>";
-    var calanderString = "<table class=\"swidget-calander table\"><tr><th class=\"swidget-heading\" colspan=\"7\"><h3>" + months[today.np.m - 1] + ", " + today.np.y +btnGroup+ "</h3></tr>";
-
+    var calanderString ="";
 
     calanderString += "<tr class=\"weekdays\">";
     days.forEach(function (value, index) {

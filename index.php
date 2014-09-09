@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="nepaliCalenderApp">
 <head>
     <title>Nepali Calender</title>
     <script type="text/javascript" src="js/nepali-calender.js"></script>
@@ -16,7 +16,9 @@
 
     <div class="row">
 
-        <div id="calender" class="col-sm-12"></div>
+        <div id="calender" class="col-sm-12">
+            <nepali-calender></nepali-calender>
+        </div>
     </div>
 
 </div>
@@ -24,30 +26,13 @@
 </body>
 <script>
     (function($){
-        var cal = new NepaliCalender("calender");
-        var dateToShow = new Date();
-        cal.render(dateToShow);
-
-        $("#calender").on('click',".btn-prev",function() {
-            dateToShow.setMonth(dateToShow.getMonth()-1);
-            console.log(dateToShow);
-            cal.render(dateToShow);
-        });
-
-        $("#calender").on('click',".btn-next",function() {
-            dateToShow.setMonth(dateToShow.getMonth()+1);
-            cal.render(dateToShow);
-        });
-        $("#calender").on('click',".btn-today",function() {
-            dateToShow = new Date();
-            cal.render(dateToShow);
-        });
 
         $("#calender").on('click','.weekday', function(){
            alert($(this).attr("data-date"));
         });
 
-
     })(jQuery);
 </script>
+<script type="text/javascript" src="bower_components/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="js/nepalicalenderApp.js"></script>
 </html>

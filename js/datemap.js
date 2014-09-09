@@ -101,10 +101,10 @@ var NepaliDateMap = function () {
         getMap: function (i) {
             return self.bs[i];
         },
-        getMonthNames: function() {
+        getMonthNames: function () {
             return self.months;
         },
-        getDayNames: function() {
+        getDayNames: function () {
             return self.days;
         }
     };
