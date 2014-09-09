@@ -74,6 +74,6 @@ NepaliCalender.prototype.render = function (today,mapService) {
     calanderString += calItems.join('</tr><tr>');
     calanderString += "</tr>";
 
-    container.innerHTML = calanderString + "</table>";
+    container.innerHTML = calanderString;
 
 };
