@@ -12,3 +12,5 @@ Since its an Angular JS app, don't forget to add ng-app="nepaliCalenderApp" wher
 
 Note:
 index.html contains example of how Calender can be used.
+
+See live at: http://sujandhakal.com.np/nepali-calender/
