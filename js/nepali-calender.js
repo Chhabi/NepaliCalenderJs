@@ -1,5 +1,6 @@
-var NepaliCalender = function (id) {
+var NepaliCalender = function (id,event_handler) {
     this.containerId = id;
+    this.event_handler = event_handler || function() {};
 }
 
 NepaliCalender.prototype.getFirstWeekDayOfMonth = function (today, weekday) {
@@ -75,5 +76,6 @@ NepaliCalender.prototype.render = function (today,mapService) {
     calanderString += "</tr>";
 
     container.innerHTML = calanderString;
+    //subscribe event
 
 };
